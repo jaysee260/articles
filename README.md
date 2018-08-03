@@ -12,7 +12,7 @@ A React boilerplate with support for Sass and built with Webpack.
 #### For development
 `npm run dev`
 
-This will use `webpack-dev-server` to serve the React application on `PORT 9000` (to change port, modify `webpack-dev-server` script in `package.json`). As an added note, the development server support real time updates.
+This will use `webpack-dev-server` to serve the React application on `PORT 9000` (to change port, modify `webpack-dev-server` script in `package.json`). As an added note, the development server supports real time updates.
 
 #### For production
 `npm run build`
