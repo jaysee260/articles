@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import Article from './Article';
 
+/**
+ * @description
+ * Container for content
+ * fetched from API
+ */
 class Content extends Component {
 
   constructor(props) {
@@ -18,55 +23,70 @@ class Content extends Component {
   }
 
   async componentWillMount() {
+    // Fetch some articles and save them to state
     let { limit, offset } = this.state;
     let articles = await this.fetchArticles(limit, offset);
     this.setState({ articles });
   }
 
   async componentDidMount() {
+    // Set up event listener so that when
+    // user scrolls to bottom of page,
+    // fetchMoreArticles() is called.
+
+    // We set a reference to fetchMoreArticles on this
+    // level because calling this.fetchMoreArticles()
+    // inside yHandler() throws a reference error.
     const fetchMoreArticles = this.fetchMoreArticles;
 
     function yHandler() {
       // Reference to the outermost "container"
       let appContainer = document.getElementById("root");
       // Gets page content height
-      let contentHeight = appContainer.offsetHeight - 0.5;
+      let contentHeight = appContainer.offsetHeight - 0.3;
       // Gets the vertical scroll position
       let yOffset = window.pageYOffset;
+      // Gets size of browser inner window
       let y = yOffset + window.innerHeight;
 
-      console.log(`${contentHeight} | ${y}`);
-      // If user has scrolled to the bottom, do this...
+      // console.log(`${contentHeight} | ${y}`);
+
+      // If user has reached the bottom
+      // of the page, fetch more articles
       if (y >= contentHeight) {
-        console.log('::: load more content :::');
+        // console.log('::: load more content :::');
         fetchMoreArticles();
       }
         
     }
 
+    // Trigger yHandler method when user scrolls
     window.onscroll = yHandler;
   }
 
   async fetchArticles(limit = 10, offset = 0) {
-
+    // Set query string parameters
     let api = `https://www.stellarbiotechnologies.com/media/press-releases/json?limit=${limit}&offset=${offset}`;
-    let result = await fetch(api);
-    let json = await result.json();
-    this.state.offset += 10;
+    // Fetch articles
+    let results = await fetch(api);
+    // Extract json from results
+    let json = await results.json();
+    // Update offset value in state
+    this.state.offset += this.state.limit;
+    // Return array of articles
     return json.news;
 
   }
 
   async fetchMoreArticles() {
-    // calls this.fetchArticles with updated offset value.
-    // either adds them to articles[] in state or appends
-    // them to ul#articles as list items
 
-    // must ensure no more AJAX calls are made to API
-    // if all 100 articles have been fetched.
     let { limit, offset, max } = this.state;
 
-    // Will only make up to 10 calls
+    // If the max number of calls has not
+    // been reached, fetch more content.
+    // Otherwise, don't do anything else.
+    // This ensures no more AJAX calls are
+    // made if all articles have been fetched.
     if (offset < max) {
       let moreArticles = await this.fetchArticles(limit, offset);
       let { articles } = this.state;
@@ -81,7 +101,8 @@ class Content extends Component {
   }
 
   renderArticles() {
-
+    // Render an Article component for each
+    // element in the articles array (in state)
     let articles = this.state.articles.map((article, index) => (
       <Article
         article={article}
