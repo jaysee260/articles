@@ -2,7 +2,7 @@
 
 ## About
 
-Fetches news articles from [this endpoint][api] and renders a React component for each one.
+Fetches news articles from [this endpoint](api) and renders a React component for each one.
 
 Each API call returns 10 items. When the user scrolls to the bottom of the page, 10 more articles are fetched and appended to the body of already existing content.
 
