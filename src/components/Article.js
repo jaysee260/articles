@@ -5,8 +5,8 @@ import moment from 'moment';
  * @param {Object} article
  * @param {Number} index
  * @description
- * Individual Article component using
- * Bulma's Box component.
+ * Individual Article component put together
+ * using Bulma's Box component.
  */
 const Article = ({ article, index }) =>
   <div
