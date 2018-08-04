@@ -1,31 +1,22 @@
-# webpack-react-boilerplate
+# articles
 
 ## About
 
-A React boilerplate with support for Sass and built with Webpack.
+Fetches news articles from [this endpoint][api] and renders a React component for each one.
 
-## Get Started
+Each API call returns 10 items. When the user scrolls to the bottom of the page, 10 more articles are fetched and appended to the body of already existing content.
 
-1. `git clone`
+The API will only provide a maximum of 100 items; therefore, at 10 items per call, only a maximum of 10 AJAX calls will every be made. To alter the number of items returned per call, change the value of `limit` inside of `Content` component's state. However, be mindful that changing this value will inevitably increase or decrease the potential number of AJAX calls ever made. It is recommended to be left at 10, as this seems like a most optimal number given the size of the provided data set.
+
+## Getting Started
+
+1. `git clone https://github.com/jsdev17/articles.git`
 1. `npm install`
+1. `npm run build`
+1. open `./dist/index.html` in your browser
 
-#### For development
-`npm run dev`
+#### NOTE
+To serve the application using webpack-dev-server (with hot reloading :fire: ), run `npm run dev` instead of `npm run build` and navigate to `http://localhost:9000/` in your browser.
 
-This will use `webpack-dev-server` to serve the React application on `PORT 9000` (to change port, modify `webpack-dev-server` script in `package.json`). As an added note, the development server supports real time updates.
 
-#### For production
-`npm run build`
-
-This will build the React application using production configurations and create a bundle (along with other files) under the `dist` folder in the root directory; if a `dist` folder does not exist webpack will create it.
-
-## Usage
-
-Feel free to browse through the default configurations and to "tune" them to fit the wants or needs of your own project.
-
-Under `build-utils` (build utilities) you will find:
-
-- `common-paths.js`
-- `webpack.common.js`
-- `webpack.dev.js`
-- `webpack.prod.js`
+[api]: [https://www.stellarbiotechnologies.com/media/press-releases/json]
