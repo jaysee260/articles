@@ -15,8 +15,9 @@
   },
   "keywords": [
     "react",
-    "boilerplate",
-    "webpack"
+    "webpack",
+    "fetch",
+    "async"
   ],
   "author": "Juan Carlos Gonzalez",
   "license": "MIT",
