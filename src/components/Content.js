@@ -30,7 +30,7 @@ class Content extends Component {
       // Reference to the outermost "container"
       let appContainer = document.getElementById("root");
       // Gets page content height
-      let contentHeight = appContainer.offsetHeight - 1;
+      let contentHeight = appContainer.offsetHeight - 0.5;
       // Gets the vertical scroll position
       let yOffset = window.pageYOffset;
       let y = yOffset + window.innerHeight;
@@ -49,16 +49,12 @@ class Content extends Component {
 
   async fetchArticles(limit = 10, offset = 0) {
 
-    // if (offset < max) {
-      let api = `https://www.stellarbiotechnologies.com/media/press-releases/json?limit=${limit}&offset=${offset}`;
-      let result = await fetch(api);
-      let json = await result.json();
-      this.state.offset += 10;
-      return json.news;
-    // } else {
-    //   return this.state.articles;
-    // }
-    
+    let api = `https://www.stellarbiotechnologies.com/media/press-releases/json?limit=${limit}&offset=${offset}`;
+    let result = await fetch(api);
+    let json = await result.json();
+    this.state.offset += 10;
+    return json.news;
+
   }
 
   async fetchMoreArticles() {
@@ -76,14 +72,17 @@ class Content extends Component {
       let { articles } = this.state;
       articles = articles.concat(moreArticles);
       this.setState({ articles });
+      /** @todo
+       * return moreArticles instead of saving to state.
+       * once returned, append to content-container
+       */
     }
 
   }
 
-  renderArticles(items = 0) {
-    items = !items ? this.state.articles : items;
+  renderArticles() {
 
-    let articles = items.map((article, index) => (
+    let articles = this.state.articles.map((article, index) => (
       <Article
         article={article}
         index={index}
@@ -92,6 +91,7 @@ class Content extends Component {
     ));
 
     return articles;
+
   }
 
   render() {
