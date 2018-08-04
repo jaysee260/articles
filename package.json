@@ -1,7 +1,7 @@
 {
-  "name": "webpack-react-boilerplate",
+  "name": "articles",
   "version": "1.0.0",
-  "description": "a react boilerplate with support for Sass and built with webpack",
+  "description": "fetches news articles as user scrolls",
   "main": "webpack.config.js",
   "scripts": {
     "dev": "npm run webpack-dev-server -- --env.env=dev",
@@ -30,6 +30,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "bulma": "^0.7.1",
     "compression-webpack-plugin": "^1.1.11",
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^4.0.0-alpha",
@@ -45,6 +46,7 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "moment": "^2.22.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   }

@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 
+import Content from './components/Content';
+
 class App extends Component {
   render() {
     return (
       <div id="app-entry">
-        <h2>I'm ready to roll</h2>
+        <section id="content-section" className="section">
+
+          {/* <div className="container"> */}
+            <Content />
+          {/* </div> */}
+
+        </section>
       </div>
     )
   }
