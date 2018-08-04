@@ -19,4 +19,4 @@ The API will only provide a maximum of 100 items; therefore, at 10 items per cal
 To serve the application using webpack-dev-server (with hot reloading :fire: ), run `npm run dev` instead of `npm run build` and navigate to `http://localhost:9000/` in your browser.
 
 
-[api]: [https://www.stellarbiotechnologies.com/media/press-releases/json]
+[api]: https://www.stellarbiotechnologies.com/media/press-releases/json
