@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "npm run webpack-dev-server -- --env.env=dev",
-    "webpack-dev-server": "webpack-dev-server --port=9000 --hot",
+    "webpack-dev-server": "webpack-dev-server --port=9000 --hot --open",
     "build": "npm run webpack -- --env.env=prod",
     "webpack": "node ./node_modules/webpack/bin/webpack.js"
   },
