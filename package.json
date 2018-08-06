@@ -4,8 +4,9 @@
   "description": "fetches news articles as user scrolls",
   "main": "webpack.config.js",
   "scripts": {
+    "start": "npm run dev -- --open",
     "dev": "npm run webpack-dev-server -- --env.env=dev",
-    "webpack-dev-server": "webpack-dev-server --port=9000 --hot --open",
+    "webpack-dev-server": "webpack-dev-server --port=9000 --hot",
     "build": "npm run webpack -- --env.env=prod",
     "webpack": "node ./node_modules/webpack/bin/webpack.js"
   },
