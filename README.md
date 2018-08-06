@@ -11,12 +11,13 @@ The API will only provide a maximum of 100 items; therefore, at 10 items per cal
 ## Getting Started
 
 1. `git clone https://github.com/jsdev17/articles.git`
+1. `cd articles`
 1. `npm install`
 1. `npm run build`
 1. open `./dist/index.html` in your browser
 
 #### NOTE
-To serve the application using webpack-dev-server (with hot reloading :fire: ), run `npm run dev` instead of `npm run build` and navigate to `http://localhost:9000/` in your browser.
+To serve the application using webpack-dev-server (with hot reloading :fire: ), run `npm run dev` instead of `npm run build`; page will open automatically on default browser.
 
 
 [api]: https://www.stellarbiotechnologies.com/media/press-releases/json
