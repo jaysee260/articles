@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jsdev17/webpack-react-boilerplate.git"
+    "url": "git+https://github.com/jsdev17/articles.git"
   },
   "keywords": [
     "react",
@@ -22,9 +22,9 @@
   "author": "Juan Carlos Gonzalez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jsdev17/webpack-react-boilerplate/issues"
+    "url": "https://github.com/jsdev17/articles/issues"
   },
-  "homepage": "https://github.com/jsdev17/webpack-react-boilerplate#readme",
+  "homepage": "https://github.com/jsdev17/articles#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
