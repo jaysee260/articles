@@ -20,7 +20,7 @@ The API will only provide a maximum of 100 items; therefore, at 10 items per cal
 #### NOTE
 Running `npm start` will use `webpack-dev-server` to serve the application on a live development server, and will open the application on your browser automatically.
 
-_If_ (and only if) you wish to test if production intended builds are successful, follow these steps:
+_If_ you wish to test if production intended builds are successful, follow these steps:
 
 1. `npm run build`
 1. open `./dist/index.html` in your browser.
