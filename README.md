@@ -2,7 +2,7 @@
 
 ## About
 
-Fetches news articles from [this endpoint][api] and renders a React component for each one.
+A SPA that fetches news articles from [this endpoint][api] and renders a React component for each one.
 
 Each API call returns 10 items. When the user scrolls to the bottom of the page, 10 more articles are fetched and appended to the body of already existing content.
 
@@ -15,11 +15,15 @@ The API will only provide a maximum of 100 items; therefore, at 10 items per cal
 1. `git clone https://github.com/jsdev17/articles.git`
 1. `cd articles`
 1. `npm install`
-1. `npm run build`
-1. open `./dist/index.html` in your browser
+1. `npm start`
 
 #### NOTE
-To serve the application using webpack-dev-server (with hot reloading :fire: ), run `npm run dev` instead of `npm run build`; page will open automatically on default browser. _This_ approach is recommended.
+Running `npm start` will use `webpack-dev-server` to serve the application on a live development server, and will open the application on your browser automatically.
+
+_If_ (and only if) you wish to test if production intended builds are successful, follow these steps:
+
+1. `npm run build`
+1. open `./dist/index.html` in your browser.
 
 
 [api]: https://www.stellarbiotechnologies.com/media/press-releases/json
