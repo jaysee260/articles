@@ -43,7 +43,7 @@ class Content extends Component {
       // Reference to the outermost "container"
       let appContainer = document.getElementById("root");
       // Gets page content height
-      let contentHeight = appContainer.offsetHeight - 0.3;
+      let contentHeight = appContainer.offsetHeight - 1;
       // Gets the vertical scroll position
       let yOffset = window.pageYOffset;
       // Gets size of browser inner window
@@ -54,7 +54,6 @@ class Content extends Component {
       // If user has reached the bottom
       // of the page, fetch more articles
       if (y >= contentHeight) {
-        // console.log('::: load more content :::');
         fetchMoreArticles();
       }
         
@@ -88,6 +87,7 @@ class Content extends Component {
     // This ensures no more AJAX calls are
     // made if all articles have been fetched.
     if (offset < max) {
+      // console.log('::: load more content :::');
       let moreArticles = await this.fetchArticles(limit, offset);
       let { articles } = this.state;
       articles = articles.concat(moreArticles);
